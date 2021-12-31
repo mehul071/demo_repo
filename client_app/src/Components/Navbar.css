@@ -1,0 +1,53 @@
+.Navbar{
+    background-color:#17191A;
+}
+.left{
+    min-width:300px;
+    flex:0.3;
+    
+}
+.left h1{
+    font-size:2.4rem;
+    margin-left:127px;
+    color:white;
+    /* align-content: right; */
+    font-family: 'Yuji Hentaigana Akebono', cursive;
+}
+.left h1 span{
+    color:red;
+    font-family: 'Yuji Hentaigana Akebono', cursive;
+}
+.center{
+    min-width:200px;
+    flex: 0.6;
+    font-size:1.2rem;
+    cursor: pointer;
+    color:white;
+}
+.center a{
+    margin-right:2rem;
+}
+.right{
+    max-width:200px;
+    display: flex;
+    flex:0.2;
+}
+.right button{
+    color:white;
+    padding: 7px 32px;
+    border: 1px solid red;
+    border-radius: 62px;
+    background-color: red;
+    font-weight: 300;
+}
+.cart_icon{
+    cursor: pointer;
+    font-size:2.2rem;
+    margin-right:20px;
+    color:white;
+}
+@media screen and (max-width:900px) {
+    .center{
+        display:none;
+    }
+}

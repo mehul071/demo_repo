@@ -1,0 +1,20 @@
+.pi{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    gap:2rem;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+/* @media screen and (max-width:600px) {
+    .pi{
+        grid-template-columns: 300px;
+    }
+}
+@media screen and (min-width:900px)
+{
+    .pi{
+        transition: 2s;
+        grid-template-columns:300px 300px 300px;   
+    }
+} */

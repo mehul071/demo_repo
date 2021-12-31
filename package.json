@@ -1,0 +1,32 @@
+{
+  "name": "pizza-delivery",
+  "version": "1.0.0",
+  "description": "Pizza delivery app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehul071/Pizza_delivery.git"
+  },
+  "author": "Mehul Tyagi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mehul071/Pizza_delivery/issues"
+  },
+  "homepage": "https://github.com/mehul071/Pizza_delivery#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4",
+    "nodemon": "^2.0.15",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "router": "^1.3.6"
+  },
+  "proxy": "http://localhost:3001"
+}

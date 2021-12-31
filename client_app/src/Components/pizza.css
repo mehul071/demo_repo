@@ -1,0 +1,39 @@
+.pizza_img{
+    height:300px;
+    width:100px;
+    object-fit: contain;
+}
+.single_pizza{
+    height:400px;
+    margin-bottom: 30px;
+}
+.select_choice{
+    display: flex;
+    margin-left:30px;
+}
+.select_choice div{
+    margin-right:50px;
+}
+.add_cart_btn{
+        color:white;
+        padding: 7px 32px;
+        border: 1px solid red;
+        border-radius: 62px;
+        background-color: red;
+        font-weight: 300;
+}
+.price_details{
+    display: flex;
+}
+.price{
+    margin-right:20px;
+}
+.close_modal{
+    margin-top:1rem;
+    color:white;
+    padding: 7px 32px;
+    border: 1px solid red;
+    border-radius: 62px;
+    background-color: red;
+    font-weight: 300;
+}
