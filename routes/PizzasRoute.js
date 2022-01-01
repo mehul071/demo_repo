@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const Pizza = require("../models/pizzamodel");
 
 router.get("/getallpizzas", async (req, res) => {
