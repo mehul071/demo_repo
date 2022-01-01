@@ -8,7 +8,7 @@ router.get("/getallpizzas", async (req, res) => {
     const pizzas = await Pizza.find({});
     res.send(pizzas);
   } catch (error) {
-    res.send("something error");
+    return res.send(400).json({ message: error });
   }
 });
 

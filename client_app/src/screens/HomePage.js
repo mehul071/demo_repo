@@ -8,7 +8,7 @@ import "./HomePage.css";
 function HomePage() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllPizzas);
+    dispatch(getAllPizzas());
   }, []);
   return (
     <div className="pi">
