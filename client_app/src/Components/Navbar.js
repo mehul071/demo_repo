@@ -1,8 +1,12 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./Navbar.css";
 
 function Navbar() {
+  const cartState = useSelector((state) => state.cartReducer);
+  console.log(cartState);
+
   return (
     <div className="Navbar flex justify-between p-6 place-items-center">
       <div className="left">
@@ -15,9 +19,12 @@ function Navbar() {
         <a>Menu</a>
         <a className="">About Us</a>
         <a>Contact</a>
+        {cartState.cartItems.length}
       </div>
       <div className="right">
-        <AiOutlineShoppingCart className="cart_icon" />
+        <span className="cart">
+          <AiOutlineShoppingCart className="cart_icon" />
+        </span>
         <button>Login</button>
       </div>
     </div>

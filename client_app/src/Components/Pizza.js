@@ -1,20 +1,14 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Card from "@mui/material/Card";
+import { addtoCart } from "../actions/cartAction";
 import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./pizza.css";
-import { Box, Button, Modal } from "@mui/material";
-import { height } from "@mui/system";
+import { Box, Modal } from "@mui/material";
 
 function Pizza({ pizza }) {
-  const [Quantity, setQuantity] = useState(1);
-  const [Varient, setVarient] = useState("small");
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
   const style = {
     position: "absolute",
     color: "black",
@@ -27,6 +21,17 @@ function Pizza({ pizza }) {
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+  };
+
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+  const [varient, setvarient] = useState("small");
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const addcart = () => {
+    console.log("clicked");
+    dispatch(addtoCart(pizza, quantity, varient));
   };
 
   return (
@@ -71,11 +76,11 @@ function Pizza({ pizza }) {
         </Typography>
         <div className="select_choice">
           <div>
-            <p>Varients</p>
+            <p>varients</p>
             <select
-              value={Varient}
+              value={varient}
               onChange={(e) => {
-                setVarient(e.target.value);
+                setvarient(e.target.value);
                 console.log(e.target.value);
               }}
             >
@@ -87,7 +92,7 @@ function Pizza({ pizza }) {
           <div>
             <p>Prices</p>
             <select
-              value={Quantity}
+              value={quantity}
               onChange={(e) => {
                 setQuantity(e.target.value);
               }}
@@ -99,8 +104,10 @@ function Pizza({ pizza }) {
           </div>
         </div>
         <CardActions className="price_details">
-          <p className="price">Prices:{pizza.prices[0][Varient] * Quantity}</p>
-          <button className="add_cart_btn">Add to cart</button>
+          <p className="price">Prices:{pizza.prices[0][varient] * quantity}</p>
+          <button className="add_cart_btn" onClick={addcart}>
+            Add to cart
+          </button>
         </CardActions>
       </Card>
     </div>

@@ -8,13 +8,6 @@ const pizzaRoute = require("./routes/PizzasRoute");
 app.use(express.json());
 app.use("/api/pizzas/", pizzaRoute);
 
-app.get("/getpizzas", (req, res) => {
-  pizza.find({}, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else res.send(data);
-  });
-});
 app.get("/", (req, res) => {
   res.send("Server Working");
 });
