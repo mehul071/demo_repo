@@ -42,15 +42,12 @@
 }
 .cart_icon{
     cursor: pointer;
-    font-size:2rem;
-    color:white;
-    margin-right:0.4rem;
-}
-.cart{
+    font-size:1.7rem;
+    color:white;  
     display: flex;
-    margin-right:20px;
-    align-items: center;
+    margin-left:10px;
 
+    align-items: center;
 }
 @media screen and (max-width:900px) {
     .center{

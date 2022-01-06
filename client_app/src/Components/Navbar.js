@@ -15,17 +15,20 @@ function Navbar() {
         </h1>
       </div>
       <div className="center">
-        <a className="text-red-600">Home</a>
+        <a className="text-red-600" href="/">
+          Home
+        </a>
         <a>Menu</a>
         <a className="">About Us</a>
         <a>Contact</a>
-        {cartState.cartItems.length}
       </div>
       <div className="right">
-        <span className="cart">
-          <AiOutlineShoppingCart className="cart_icon" />
-        </span>
         <button>Login</button>
+
+        <a href="/cart" className="text-xl cart_icon">
+          <AiOutlineShoppingCart />
+          {cartState.cartItems.length}
+        </a>
       </div>
     </div>
   );
