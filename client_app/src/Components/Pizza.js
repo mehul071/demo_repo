@@ -30,7 +30,6 @@ function Pizza({ pizza }) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const addcart = () => {
-    console.log("clicked");
     dispatch(addtoCart(pizza, quantity, varient));
   };
 

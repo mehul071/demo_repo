@@ -4,3 +4,19 @@
 .cart_heading{
     font-size:2rem;
 }
+.cart_img img{
+    height:80px; 
+}
+.plus{
+    color:green;
+    cursor: pointer;
+    margin-right:3px
+}
+.minus{
+    color:red;
+    cursor:pointer;
+    margin-left:3px;
+}
+.trash{
+    color:red;
+}
