@@ -3,15 +3,17 @@ import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import HomePage from "./screens/HomePage";
 import CartScreen from "./screens/CartScreen";
+import Login from "./Login";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Login />
+      {/* <Navbar />
       <BrowserRouter>
         <Route path="/" exact component={HomePage} />
         <Route path="/cart" exact component={CartScreen} />
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }
