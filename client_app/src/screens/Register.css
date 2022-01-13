@@ -1,0 +1,33 @@
+.register{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    /* border:3px solid black; */
+    padding:3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+input{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding:0.5rem;
+    border-radius: 3px;
+    width: 262px;
+    background: white;
+    font-size:0.9rem !important;    
+    border:none;
+    /* margin-left:1rem; */
+    outline: none !important;
+    margin-bottom: 2rem;
+}
+button{
+    width:260px !important;
+    text-align: center !important;
+    justify-content: center !important;
+}

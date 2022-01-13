@@ -1,0 +1,103 @@
+.login{
+    /* width: 100%; */
+    text-align: center;
+    justify-content: center;
+    margin-top: 4rem;
+    align-self: center;
+    display: flex;
+    /* border: 2px solid red; */
+    /* width:500px; */
+    
+}
+.heading{
+    font-weight: 685;
+    font-size:3rem;
+}
+.google_login_btn{
+    margin-top:3rem;
+    width: 250px;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+.auth-options{
+    /* border:1px solid b; */
+    width:400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.or{
+    font-size: 1.5rem;
+
+}
+input{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.input_email{
+    padding:0.5rem;
+    outline: none;
+    width:262px;
+    
+    color:black;
+    margin-top:.5rem;
+    border-radius: 3px;
+}
+.input_password{
+    color:black;
+    /* margin-top:1rem; */
+    padding:0.5rem;
+    outline: none;
+    width:262px;
+    color:black;
+    border-radius: 3px;
+    max-width:300px;
+}
+
+/* Sign button styles */
+button{
+    position: relative;
+    border:0;
+    overflow:hidden;
+    transform: 0.4s ease-in;
+    z-index: 1;
+}
+
+.signin_btn{
+    padding:7px;
+    width:260px;
+    cursor: pointer;
+    margin-top:1rem;
+    border-radius: 3px;
+    border:1px solid red;
+    background: white;
+    height: 40px;
+    text-align: center;
+    color:black;
+    outline: none;
+}
+button::before,button::after{
+    background:red;
+    content:"";
+    position:absolute;
+    z-index:-1;
+}
+.signin_btn::after{
+    height:100%;
+    left:-35%;
+    top:0;
+    transform:skew(50deg);
+    transition-duration: 0.6s;
+    transform-origin: top left;
+    width:0;
+}
+.signin_btn:hover:after{
+    height:100%;
+    width:135%;
+}
+.new_account{
+    color:grey;
+    margin-top:1.5rem;
+    margin-bottom: 1.5rem;
+}
+.new_account a{
+    color:black;
+    cursor: pointer;
+}

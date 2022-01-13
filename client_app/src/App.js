@@ -3,17 +3,19 @@ import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import HomePage from "./screens/HomePage";
 import CartScreen from "./screens/CartScreen";
-import Login from "./Login";
+import Register from "../src/screens/Register";
+import Login from "../src/screens/Login";
 
 function App() {
   return (
     <div className="App">
-      <Login />
-      {/* <Navbar />
+      <Navbar />
       <BrowserRouter>
         <Route path="/" exact component={HomePage} />
         <Route path="/cart" exact component={CartScreen} />
-      </BrowserRouter> */}
+        <Route path="/login" exact component={Login} />
+        <Route path="/register" exact component={Register} />
+      </BrowserRouter>
     </div>
   );
 }
