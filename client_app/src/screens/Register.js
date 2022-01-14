@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../actions/UserAction";
 import "./Register.css";
 
 function Register() {
@@ -6,9 +8,10 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassowrd, setCPassword] = useState("");
+  const dispatch = useDispatch();
 
   function register() {
-    if (password != cpassowrd) {
+    if (password !== cpassowrd) {
       alert("Email or password wrong");
     } else {
       const user = {
@@ -17,6 +20,7 @@ function Register() {
         password,
       };
       console.log(user);
+      dispatch(registerUser(user));
     }
   }
 
@@ -38,7 +42,6 @@ function Register() {
           placeholder="Enter Email"
           className="register_email"
           value={email}
-          //   size="30"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -66,6 +69,9 @@ function Register() {
         <button className="signin_btn" onClick={register}>
           Register
         </button>
+        <h1 className="mt-2">
+          <a href="/login">Back to Login</a>
+        </h1>
       </div>
     </div>
   );

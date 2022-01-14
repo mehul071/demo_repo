@@ -16,7 +16,7 @@ function Pizza({ pizza }) {
     left: "50%",
     transform: "translate(-50%, -50%)",
     maxheight: 400,
-    minwidth: 300,
+    minwidth: 400,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -35,7 +35,7 @@ function Pizza({ pizza }) {
 
   return (
     <div className="single_pizza sm-3">
-      <Card sx={{ maxWidth: 300 }}>
+      <Card sx={{ maxWidth: 400 }} className="whole-pizza">
         <CardMedia
           component="img"
           className="pizza_img cursor-pointer"

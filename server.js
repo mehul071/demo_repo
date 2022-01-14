@@ -4,9 +4,13 @@ const pizza = require("./models/pizzamodel");
 
 const app = express();
 const pizzaRoute = require("./routes/PizzasRoute");
+const UserRoute = require("./routes/UserRoute");
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/pizzas/", pizzaRoute);
+app.use("/api/users/", UserRoute);
 
 app.get("/", (req, res) => {
   res.send("Server Working");
