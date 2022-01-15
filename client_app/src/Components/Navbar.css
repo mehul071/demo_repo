@@ -32,10 +32,11 @@
     max-width:200px;
     display: flex;
     flex:0.2;
+    margin-right:2rem;
 }
 .login_btn{
-    color:white;
-    padding: 7px 32px;
+    /* color:white; */
+    padding: 7px 20px;
     border: 1px solid white;
     border-radius: 62px;
     background-color: white;
@@ -56,13 +57,10 @@
         display:none;
     }
 }
-  
-  /* .circle {
-    background-color: #ccc;
-    border-radius: 50%;
-    height: 2rem;
+.user_name{
+    display: flex;
     align-items: center;
-    /* display: flex; */
-    /* text-align: center; */
-    /* width: 3rem; */
-  /* } */
+    margin-right: 1rem;
+    color:white;
+    font-size:1rem;
+}

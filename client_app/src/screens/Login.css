@@ -101,3 +101,8 @@ button::before,button::after{
     color:black;
     cursor: pointer;
 }
+.redirect_register:hover{
+    text-decoration: underline;
+    text-decoration-color:red;
+    transition-delay: 2s ease-in;
+}

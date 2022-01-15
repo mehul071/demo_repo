@@ -6,6 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./pizza.css";
+import Loading from "../Components/Loading";
 import { Box, Modal } from "@mui/material";
 
 function Pizza({ pizza }) {
@@ -32,15 +33,18 @@ function Pizza({ pizza }) {
   const addcart = () => {
     dispatch(addtoCart(pizza, quantity, varient));
   };
+  const pizzaState = useSelector((state) => state.getAllPizzasReducer);
+  const { loading, error } = pizzaState;
 
   return (
     <div className="single_pizza sm-3">
+      {loading && <Loading />}
       <Card sx={{ maxWidth: 400 }} className="whole-pizza">
         <CardMedia
           component="img"
           className="pizza_img cursor-pointer"
           image={pizza.image}
-          alt="green iguana"
+          alt="Pizza image"
           onClick={handleOpen}
         />
         <Modal

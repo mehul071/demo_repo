@@ -2,7 +2,9 @@
     padding:2rem;   
 }
 .cart_heading{
-    font-size:2rem;
+    font-size:3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 .cart_img img{
     height:80px; 
@@ -19,4 +21,29 @@
 }
 .trash{
     color:red;
+}
+.cart_cost{
+    font-size:3rem;
+    font-weight: 600;
+
+}
+.paynow_btn{
+    border:2px solid red;
+    border-radius: 3px;
+    padding:.2rem;   
+    background-color: red;
+    margin-right: 10px;
+    color: white;
+    width:100px;
+
+}
+@media screen and (max-width:600px)
+{
+    .cart_cost{
+        font-size:2rem;
+    }
+}
+.line_under{
+    width:500px;
+    margin-bottom:1rem;
 }

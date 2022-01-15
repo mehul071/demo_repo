@@ -6,6 +6,8 @@ import "./Navbar.css";
 function Navbar() {
   const [Login, setLogin] = useState(false);
   const cartState = useSelector((state) => state.cartReducer);
+  const userState = useSelector((state) => state.loginUserReducer);
+  const { current_user } = userState;
   useEffect(() => {
     if (localStorage.getItem("current_user")) {
       setLogin(true);
@@ -35,13 +37,19 @@ function Navbar() {
       </div>
 
       <div className="right">
+        {Login ? <span className="user_name">{current_user.name}</span> : null}
         <a href="/login" className="login_btn" onClick={logoutUser}>
           {Login ? "Logout" : "login"}
         </a>
-        <a href="/cart" className="text-xl cart_icon">
-          <AiOutlineShoppingCart />
-          {cartState.cartItems.length}
-        </a>
+
+        {Login ? (
+          <a href="/cart" className="text-xl cart_icon">
+            <AiOutlineShoppingCart />
+            {cartState.cartItems.length}
+          </a>
+        ) : (
+          <h1></h1>
+        )}
       </div>
     </div>
   );

@@ -27,7 +27,15 @@ input{
     margin-bottom: 2rem;
 }
 button{
-    width:260px !important;
+    width:260px;
     text-align: center !important;
     justify-content: center !important;
+}
+/* .redirect_login{
+    text-decoration: underline;
+    text-decoration-color:red;
+} */
+.redirect_login:hover{
+    text-decoration: underline;
+    text-decoration-color: red;
 }

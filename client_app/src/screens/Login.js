@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { loginUser } from "../actions/UserAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "../Components/Loading";
 import "./Login.css";
 
 function Login() {
@@ -13,6 +14,8 @@ function Login() {
   const [showLoginButton, setshowLoginButton] = useState(true);
   const [showLogoutButton, setshowLogoutButton] = useState(false);
   const dispatch = useDispatch();
+  const loginState = useSelector((state) => state.loginUserReducer);
+  const { success, loading, error } = loginState;
   useEffect(() => {
     if (localStorage.getItem("current_user")) {
       window.location.href = "/";
@@ -47,6 +50,7 @@ function Login() {
     <div className="login">
       <div className="auth-options">
         <h1 className="heading">Sign in.</h1>
+
         {/* <div>
           {showLoginButton ? (
             <GoogleLogin
@@ -100,7 +104,9 @@ function Login() {
         </div>
         <p className="new_account">
           Don't have an account?
-          <a href="/register">Create Account</a>
+          <a href="/register" className="redirect_register">
+            Create Account
+          </a>
         </p>
       </div>
     </div>

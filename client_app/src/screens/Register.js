@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../actions/UserAction";
+import Success from "../Components/Success";
 import "./Register.css";
 
 function Register() {
@@ -69,7 +70,7 @@ function Register() {
         <button className="signin_btn" onClick={register}>
           Register
         </button>
-        <h1 className="mt-2">
+        <h1 className="mt-2 redirect_login">
           <a href="/login">Back to Login</a>
         </h1>
       </div>
