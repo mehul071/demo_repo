@@ -1,6 +1,6 @@
 import react from "react";
 
-function Success({ success }) {
+function Success({ success, paymentid }) {
   return (
     <div>
       <div
@@ -19,7 +19,7 @@ function Success({ success }) {
           </div>
           <div>
             <p class="font-bold ">Success</p>
-            <p class="text-sm"></p>
+            <p class="text-sm">{success}</p>
           </div>
         </div>
       </div>

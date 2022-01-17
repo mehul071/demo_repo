@@ -7,12 +7,14 @@ import { cartReducer } from "./reducers/cartreducers";
 import { registerUserReducer } from "./reducers/Userreducers";
 import { loginUserReducer } from "./reducers/loginreducer";
 import { placeOrderReducer } from "./reducers/orderreducers";
+import { createorderReducer } from "./reducers/createorderreducer";
 
 const FinalReducer = combineReducers({
   getAllPizzasReducer: getAllPizzasReducer,
   cartReducer: cartReducer,
   registerUserReducer: registerUserReducer,
   loginUserReducer: loginUserReducer,
+  createorderReducer: createorderReducer,
   placeOrderReducer: placeOrderReducer,
 });
 

@@ -1,38 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { placeOrder } from "../actions/orderAction";
-import uuid from "uuid";
+import { createorder, placeOrder } from "../actions/orderAction";
+import Success from "./Success";
+import { v4 as uuidv4 } from "uuid";
 import "./Checkout.css";
 
 function Checkout({ subtotal }) {
+  useEffect(() => {
+    dispatch(createorder());
+  }, [subtotal]);
   const dispatch = useDispatch();
-  function loadRazorpay(src) {
-    const script = document.createElement("script");
-    script.src = src;
-    document.body.appendChild(script);
-  }
+  const orderState = useSelector((state) => state.createorderReducer);
+  const { order_data } = orderState;
+
   async function displayRazorpay() {
-    const res = await loadRazorpay(
-      "https://checkout.razorpay.com/v1/checkout.js"
-    );
-    if (!res) {
-      alert("Razor pay SDK failed" + res);
-    }
     var options = {
-      key: "rzp_test_QxHaQP0vbMKLZj", // Enter the Key ID generated from the Dashboard
-      amount: subtotal,
+      key: "rzp_test_QxHaQP0vbMKLZj",
+      amount: subtotal * 100,
       currency: "INR",
       name: "Foody",
-      order_id: uuid.v4(),
+      order_id: order_data,
       handler: function (response) {
         alert(response.razorpay_payment_id);
-        alert(response.razorpay_order_id);
-        alert(response.razorpay_signature);
-      },
-      prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com",
-        contact: "9999999999",
       },
       notes: {
         address: "Razorpay Corporate Office",
@@ -43,6 +32,7 @@ function Checkout({ subtotal }) {
     };
     const razorpayObject = new window.Razorpay(options);
     razorpayObject.open();
+    dispatch(createorder(subtotal));
   }
   return (
     <div>
