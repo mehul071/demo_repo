@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { BsTrashFill } from "react-icons/bs";
+import Checkout from "../Components/Checkout";
 import "./cartScreen.css";
 import { addtoCart, deletefromCart } from "../actions/cartAction";
 
@@ -64,7 +65,7 @@ function CartScreen() {
       </div>
       <div className=" flex-1 flex flex-col items-end">
         <h1 className="cart_cost">Subtotal: {subtotal} /Rs-</h1>
-        <button className="paynow_btn ">PayNow</button>
+        <Checkout subtotal={subtotal} />
       </div>
     </div>
   );

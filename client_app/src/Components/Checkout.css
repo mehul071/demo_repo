@@ -1,0 +1,10 @@
+.paynow_btn{
+    border:2px solid red;
+    border-radius: 3px;
+    padding:.2rem;   
+    background-color: red;
+    margin-right: 10px;
+    color: white;
+    width:100px;
+
+}

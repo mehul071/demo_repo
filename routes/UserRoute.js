@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
       throw "login failed";
     }
   } catch (error) {
-    return res.status(400).json({ message: error });
+    return res.status(400).json({ message: "Something went wrong" } + error);
   }
 });
 
