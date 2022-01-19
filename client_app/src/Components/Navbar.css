@@ -1,15 +1,9 @@
 .Navbar{
     background-color:red;
-    /* box-shadow: 12px 12px 2px 12px rgb(255, 8, 0); */
-}
-.left{
-    min-width:300px;
-    flex:0.3;
-    
 }
 .left h1{
     font-size:2.4rem;
-    margin-left:127px;
+    /* margin-left:127px; */
     color:white;
     /* align-content: right; */
     font-family: 'Yuji Hentaigana Akebono', cursive;
@@ -19,20 +13,21 @@
     font-family: 'Yuji Hentaigana Akebono', cursive;
 }
 .center{
-    min-width:200px;
-    flex: 0.6;
+    display: flex;
     font-size:1.2rem;
     color:white;
+    flex: .5;
 }
 .center a{
     margin-right:2rem;
     cursor:pointer;
+    
 }
 .right{
     max-width:200px;
     display: flex;
-    flex:0.2;
-    margin-right:2rem;
+    /* flex:0.2; */
+    align-items:center;
 }
 .login_btn{
     /* color:white; */
@@ -48,13 +43,15 @@
     font-size:1.7rem;
     color:white;  
     display: flex;
-    margin-left:10px;
-
+    margin-left:5px;
     align-items: center;
 }
 @media screen and (max-width:1000px) {
     .center{
         display:none;
+    }
+    .user_name{
+        display: none !important;
     }
 }
 .user_name{

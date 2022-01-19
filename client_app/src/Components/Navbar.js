@@ -35,7 +35,6 @@ function Navbar() {
         <a className="">About Us</a>
         <a>Contact</a>
       </div>
-
       <div className="right">
         {Login ? <span className="user_name">{current_user.name}</span> : null}
         <a href="/login" className="login_btn" onClick={logoutUser}>

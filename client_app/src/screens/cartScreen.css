@@ -1,5 +1,6 @@
 .cart{
-    padding:2rem;   
+    padding:2rem; 
+    overflow: hidden;  
 }
 .cart_heading{
     font-size:3rem;
@@ -8,6 +9,7 @@
 }
 .cart_img img{
     height:80px; 
+    flex-direction: row;
 }
 .plus{
     color:green;
@@ -27,11 +29,26 @@
     font-weight: 600;
 
 }
-
-@media screen and (max-width:600px)
+.cart{
+    flex-direction: row;
+}
+.cart_items{
+    flex-direction: row;
+}
+@media screen and (max-width:750px)
 {
+    .cart_heading{
+        font-size:2rem;
+    }
     .cart_cost{
         font-size:2rem;
+    }
+    .cart{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cart_items{
+        flex-direction: column;
     }
 }
 .line_under{

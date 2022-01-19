@@ -12,53 +12,53 @@ function CartScreen() {
   var subtotal = cartItems.reduce((x, item) => x + item.price, 0);
   const dispatch = useDispatch();
   return (
-    <div className="cart flex justify-center">
-      <div className="cart_items flex-1 justify-center">
+    <div className="cart flex">
+      <div className="cart_items">
         <h1 className="cart_heading">Cart</h1>
-        {cartItems.map((item) => {
+        {cartItems.map((item, i) => {
           return (
-            <div>
+            <div key={i}>
               <div className="cart_item mb-3 flex">
-                <div className="items flex-1 items-center">
-                  <h1>{item.name}</h1>
-                  <p>
-                    price: {item.quantity} * {item.price} = {item.price}
-                  </p>
-                  <p className="inline-block">
-                    Quantity:
-                    <AiOutlinePlus
-                      className="inline-block plus"
-                      onClick={() => {
-                        dispatch(
-                          addtoCart(item, item.quantity + 1, item.varient)
-                        );
-                      }}
-                    />
-                    {item.quantity}
-                    <AiOutlineMinus
-                      className="inline-block minus"
-                      onClick={() => {
-                        dispatch(
-                          addtoCart(item, item.quantity - 1, item.varient)
-                        );
-                      }}
-                    />
-                  </p>
-                </div>
-                <div className="cart_img flex-1 flex ">
-                  <img src={item.image} />
-                  <div className="items-center trash">
-                    <span className="block">
-                      <BsTrashFill
+                <div className="responsive ">
+                  <div className="items mr-5 items-center">
+                    <h1>{item.name}</h1>
+                    <p>
+                      price: {item.quantity} * {item.price} = {item.price}
+                    </p>
+                    <p className="inline-block">
+                      Quantity:
+                      <AiOutlinePlus
+                        className="inline-block plus"
                         onClick={() => {
-                          dispatch(deletefromCart(item));
+                          dispatch(
+                            addtoCart(item, item.quantity + 1, item.varient)
+                          );
                         }}
                       />
-                    </span>
+                      {item.quantity}
+                      <AiOutlineMinus
+                        className="inline-block minus"
+                        onClick={() => {
+                          dispatch(
+                            addtoCart(item, item.quantity - 1, item.varient)
+                          );
+                        }}
+                      />
+                    </p>
                   </div>
                 </div>
+                <div className="cart_img flex">
+                  <img src={item.image} />
+                  <span className="block trash">
+                    <BsTrashFill
+                      onClick={() => {
+                        dispatch(deletefromCart(item));
+                      }}
+                    />
+                  </span>
+                </div>
               </div>
-              <hr className="line_under"></hr>
+              {/* <hr className="line_under"></hr> */}
             </div>
           );
         })}

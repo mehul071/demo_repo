@@ -1,25 +1,12 @@
 import axios from "axios";
 
-export const createorder = (id, subtotal) => async (dispatch, getState) => {
-  const cartItems = getState().cartReducer.cartItems;
-  dispatch({ type: "CREATE_ORDER_REQUEST" });
+export const createorder = (subtotal) => async (dispatch, getState) => {
+  dispatch({ type: "GET_ORDER_REQUEST" });
   try {
-    const response = await axios.get("/api/orders/createorder");
-    dispatch({ type: "CREATE_ORDER_SUCCESS", payload: response.data });
-    console.log(response);
+    const response = await axios.post("/api/orders/createorder", { subtotal });
+    // console.log(response);
+    dispatch({ type: "GET_ORDER_SUCCESS", payload: response.data });
   } catch (error) {
-    dispatch({ type: "CREATE_ORDER_FAILED", payload: error });
-  }
-};
-
-export const placeorder = (subtotal) => async (dispatch, getState) => {
-  const cartItems = getState().cartReducer.cartItems;
-  dispatch({ type: "PLACE_ORDER_REQUEST" });
-  try {
-    const response = await axios.post("/api/orders/placeorder", { cartItems });
-    dispatch({ type: "PLACE_ORDER_SUCCESS" });
-    console.log(response);
-  } catch (error) {
-    dispatch({ type: "PLACE_ORDER_FAILED", type: error });
+    dispatch({ type: "GET_ORDER_FAILED", payload: error });
   }
 };

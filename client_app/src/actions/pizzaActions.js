@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getAllPizzas = () => async (dispatch) => {
-  dispatch({ type: "GET_PIZZAS_REQUESTS" });
+  dispatch({ type: "GET_PIZZAS_REQUEST" });
 
   try {
     const response = await axios.get("/api/pizzas/getallpizzas");
@@ -15,7 +15,7 @@ export const getAllPizzas = () => async (dispatch) => {
 
 export const filterPizzas = (searchKey, option) => async (dispatch) => {
   var FilterPizzas;
-  dispatch({ type: "GET_PIZZAS_REQUESTS" });
+  dispatch({ type: "GET_PIZZAS_REQUEST" });
 
   try {
     const response = await axios.get("/api/pizzas/getallpizzas");

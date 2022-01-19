@@ -12,15 +12,3 @@
     align-items: center;
     justify-content: center;
 }
-/* @media screen and (max-width:600px) {
-    .pi{
-        grid-template-columns: 300px;
-    }
-}
-@media screen and (min-width:900px)
-{
-    .pi{
-        transition: 2s;
-        grid-template-columns:300px 300px 300px;   
-    }
-} */
