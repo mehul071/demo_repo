@@ -8,12 +8,12 @@
     "npm":"6.14.14"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client_app-install": "npm install --prefix client_app",
     "server": "nodemon server.js",
     "client_app": "npm start --prefix client_app",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client_app\"",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client_app && npm run build --prefix client_app"
   },
   "repository": {
     "type": "git",
