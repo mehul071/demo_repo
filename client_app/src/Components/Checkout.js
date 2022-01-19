@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createorder, placeOrder } from "../actions/orderAction";
+import { createorder } from "../actions/orderAction";
 import Success from "./Success";
-import { v4 as uuidv4 } from "uuid";
 import "./Checkout.css";
 
 function Checkout({ subtotal }) {
-  useEffect(() => {
-    dispatch(createorder());
-  }, [subtotal]);
   const dispatch = useDispatch();
   const orderState = useSelector((state) => state.createorderReducer);
   const { order_data } = orderState;

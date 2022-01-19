@@ -39,7 +39,7 @@ function Pizza({ pizza }) {
   return (
     <div className="single_pizza sm-3">
       {loading && <Loading />}
-      <Card sx={{ maxWidth: 400 }} className="whole-pizza">
+      <Card sx={{ maxWidth: 350 }} className="whole-pizza">
         <CardMedia
           component="img"
           className="pizza_img cursor-pointer"

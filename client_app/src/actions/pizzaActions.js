@@ -5,8 +5,29 @@ export const getAllPizzas = () => async (dispatch) => {
 
   try {
     const response = await axios.get("/api/pizzas/getallpizzas");
-    // console.log(response);
     dispatch({ type: "GET_PIZZAS_SUCCESS", payload: response.data });
+    console.log(response);
+  } catch (error) {
+    dispatch({ type: "GET_PIZZAS_FAILED", payload: error });
+    console.log(error);
+  }
+};
+
+export const filterPizzas = (searchKey, option) => async (dispatch) => {
+  var FilterPizzas;
+  dispatch({ type: "GET_PIZZAS_REQUESTS" });
+
+  try {
+    const response = await axios.get("/api/pizzas/getallpizzas");
+    FilterPizzas = response.data.filter((pizza) =>
+      pizza.name.toLowerCase().includes(searchKey)
+    );
+    if (option != "all") {
+      FilterPizzas = response.data.filter(
+        (pizza) => pizza.category.toLowerCase() == option
+      );
+    }
+    dispatch({ type: "GET_PIZZAS_SUCCESS", payload: FilterPizzas });
   } catch (error) {
     dispatch({ type: "GET_PIZZAS_FAILED", payload: error });
     console.log(error);

@@ -6,7 +6,7 @@ function Error({ error }) {
     <div className="Error w-auto">
       <Alert severity="error">
         <AlertTitle>Error</AlertTitle>
-        {error} — <strong>check it out!</strong>
+        {error} — <strong>Please refresh the page</strong>
       </Alert>
     </div>
   );

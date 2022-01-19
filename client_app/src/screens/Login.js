@@ -38,43 +38,10 @@ function Login() {
     };
     dispatch(loginUser(user));
   };
-  const onFailuresSuccess = (res) => {
-    console.log("login failed", res);
-  };
-  const onSignoutSuccess = () => {
-    alert("Sign out success");
-    setshowLoginButton(true);
-    setshowLogoutButton(false);
-  };
   return (
     <div className="login">
       <div className="auth-options">
         <h1 className="heading">Sign in.</h1>
-
-        {/* <div>
-          {showLoginButton ? (
-            <GoogleLogin
-              className="google_login_btn"
-              clientId={clientId}
-              buttonText="Continue with google"
-              onSuccess={onLoginSuccess}
-              onFailure={onFailuresSuccess}
-              cookiePolicy={"single_host_origin"}
-            />
-          ) : null}
-          <div>
-            <div className="google-login">
-              {showLogoutButton ? (
-                <GoogleLogout
-                  clientId={clientId}
-                  buttonText="logout"
-                  onLogoutSuccess={onSignoutSuccess}
-                />
-              ) : null}
-            </div>
-          </div>
-          <p className="or">or</p> */}
-
         <div className="input_1">
           <input
             type="email"

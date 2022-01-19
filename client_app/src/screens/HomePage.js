@@ -4,6 +4,7 @@ import { getAllPizzas } from "../actions/pizzaActions";
 import Loading from "../Components/Loading";
 import Pizza from "../Components/Pizza";
 import Error from "../Components/Error";
+import Filter from "../Components/Filter";
 import "./HomePage.css";
 
 function HomePage() {
@@ -14,26 +15,31 @@ function HomePage() {
     dispatch(getAllPizzas());
   }, []);
   return (
-    <div className="pi">
-      {loading ? (
-        <p>
-          <Loading />
-        </p>
-      ) : error ? (
-        <h1>
-          <Error error="Something went wrong" />
-        </h1>
-      ) : (
-        pizzas.map((pizza) => {
-          return (
-            <div>
+    <div>
+      <div className="">
+        <Filter />
+      </div>
+      <div className="pi">
+        {loading ? (
+          <p>
+            <Loading />
+          </p>
+        ) : error ? (
+          <h1>
+            <Error error="Something went wrong" />
+          </h1>
+        ) : (
+          pizzas.map((pizza) => {
+            return (
               <div>
-                <Pizza pizza={pizza} />
+                <div>
+                  <Pizza pizza={pizza} />
+                </div>
               </div>
-            </div>
-          );
-        })
-      )}
+            );
+          })
+        )}
+      </div>
     </div>
   );
 }

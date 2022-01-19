@@ -19,23 +19,8 @@ router.get("/createorder", async (req, res) => {
   instance.orders.create(option, function (error, order) {
     if (error)
       return res.send(500).json({ message: "Error with the api call" });
-    res.json(order.id);
+    res.json(order.id, subtotal);
   });
 });
-
-// router.post("/placeorder", async (req, res) => {
-//   const { subtotal } = req.body;
-
-//   var option = {
-//     amount: subtotal * 100,
-//     currency: "INR",
-//     receipt: uuidv4(),
-//   };
-//   instance.orders.create(option, function (error, order) {
-//     if (error)
-//       return res.send(500).json({ message: "Error with the api call" });
-//     res.json(order);
-//   });
-// });
 
 module.exports = router;

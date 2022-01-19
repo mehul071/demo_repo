@@ -64,7 +64,7 @@ function CartScreen() {
         })}
       </div>
       <div className=" flex-1 flex flex-col items-end">
-        <h1 className="cart_cost">Subtotal: {subtotal} /Rs-</h1>
+        <h1 className="cart_cost">Subtotal: {subtotal} Rs/-</h1>
         <Checkout subtotal={subtotal} />
       </div>
     </div>

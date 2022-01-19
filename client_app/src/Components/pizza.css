@@ -1,18 +1,20 @@
 .pizza_img{
     height:300px;
     width:100px;
-    object-fit: cover;
+    object-fit: contain;
     padding:3rem;
 }
 .single_pizza{
     height:400px;
-    margin-bottom: 30px;
-    
+    margin:2.5rem;
+    max-width: 400px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin-bottom: 1rem;
 }
 .whole-pizza{
     background-color: rgb(240, 190, 190) !important;
     /* margin:1rem ; */
+    margin-bottom: 2rem;
 }
 .select_choice{
     
