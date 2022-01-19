@@ -5,14 +5,17 @@ import { BsTrashFill } from "react-icons/bs";
 import Checkout from "../Components/Checkout";
 import "./cartScreen.css";
 import { addtoCart, deletefromCart } from "../actions/cartAction";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 function CartScreen() {
+  Aos.init();
   const cartstate = useSelector((state) => state.cartReducer);
   const cartItems = cartstate.cartItems;
   var subtotal = cartItems.reduce((x, item) => x + item.price, 0);
   const dispatch = useDispatch();
   return (
-    <div className="cart flex">
+    <div className="cart flex" data-aos="fade-down">
       <div className="cart_items">
         <h1 className="cart_heading">Cart</h1>
         {cartItems.map((item, i) => {

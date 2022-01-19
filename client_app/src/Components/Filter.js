@@ -7,7 +7,6 @@ function Filter() {
   const [option, setOption] = useState("all");
   const [searchKey, setsearchKey] = useState("");
   const dispatch = useDispatch();
-  console.log(option);
   return (
     <div className="searchbar">
       <div className="filter_bar shadow-lg">

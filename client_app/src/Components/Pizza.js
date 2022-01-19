@@ -4,6 +4,8 @@ import Card from "@mui/material/Card";
 import { addtoCart } from "../actions/cartAction";
 import CardActions from "@mui/material/CardActions";
 import CardMedia from "@mui/material/CardMedia";
+import "aos/dist/aos.css";
+import Aos from "aos";
 import Typography from "@mui/material/Typography";
 import "./pizza.css";
 import Loading from "../Components/Loading";
@@ -24,6 +26,7 @@ function Pizza({ pizza }) {
     p: 4,
   };
 
+  Aos.init();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [varient, setvarient] = useState("small");
@@ -37,9 +40,9 @@ function Pizza({ pizza }) {
   const { loading, error } = pizzaState;
 
   return (
-    <div className="single_pizza sm-3">
+    <div className="single_pizza sm-3 mb-3" data-aos="zoom-in">
       {loading && <Loading />}
-      <Card sx={{ maxWidth: 350 }} className="whole-pizza">
+      <Card sx={{ maxWidth: 350 }} className="whole-pizza mb-3">
         <CardMedia
           component="img"
           className="pizza_img cursor-pointer"
@@ -87,7 +90,7 @@ function Pizza({ pizza }) {
                 console.log(e.target.value);
               }}
             >
-              {pizza.varients.map((varient) => {
+              {pizza.varients.map((varient, i) => {
                 return <option value={varient}>{varient}</option>;
               })}
             </select>

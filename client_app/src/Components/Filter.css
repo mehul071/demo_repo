@@ -3,9 +3,8 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    margin-top:4rem;
-    margin-bottom: 2rem;
-    
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 .filter_bar{
     width:840px;
@@ -21,12 +20,15 @@
 }
 .search{
     margin-bottom: 0 !important;
+    
 }
 .types{
     width: 99px;
     height: 40px;
     text-align: center;
-
+    border:2px solid black;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .filter_btn{
     border-radius: 4px;
@@ -34,6 +36,7 @@
     width:100px;
     color:white;
     height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 @media screen and (max-width: 600px) {
     .filter_bar{

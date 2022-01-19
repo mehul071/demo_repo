@@ -1,6 +1,6 @@
 const express = require("express");
 const db = require("./db");
-const pizza = require("./models/pizzamodel");
+const path = require("path");
 
 const app = express();
 const pizzaRoute = require("./routes/PizzasRoute");
@@ -14,10 +14,12 @@ app.use("/api/pizzas/", pizzaRoute);
 app.use("/api/users/", UserRoute);
 app.use("/api/orders/", placeRoute);
 
-app.get("/", (req, res) => {
-  res.send("Server Working");
-});
-
+if (process.env.NODE_ENV === "production") {
+  app.use("/", express.static("client_app/build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "/client_app/build/index.html"));
+  });
+}
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => "Server running on port 5000");
+app.listen(port, () => console.log("Server running on port 5000"));

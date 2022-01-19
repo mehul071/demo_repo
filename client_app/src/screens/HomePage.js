@@ -16,27 +16,19 @@ function HomePage() {
   }, []);
   return (
     <div>
-      <div className="">
-        <Filter />
-      </div>
+      <Filter />
       <div className="pi">
         {loading ? (
-          <p>
+          <div>
             <Loading />
-          </p>
+          </div>
         ) : error ? (
-          <h1>
+          <div>
             <Error error="Something went wrong" />
-          </h1>
+          </div>
         ) : (
-          pizzas.map((pizza) => {
-            return (
-              <div>
-                <div>
-                  <Pizza pizza={pizza} />
-                </div>
-              </div>
-            );
+          pizzas.map((pizza, i) => {
+            return <Pizza pizza={pizza} />;
           })
         )}
       </div>
