@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import HomePage from "./screens/HomePage";
-import CartScreen from "./screens/CartScreen";
+import HomePage from "../screens/HomePage";
 import Register from "../src/screens/Register";
+import CartScreen from "../src/screens/CartScreen";
 import Login from "../src/screens/Login";
 
 function App() {
