@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../actions/UserAction";
-import Success from "../Components/Success";
 import "./Register.css";
 
 function Register() {
