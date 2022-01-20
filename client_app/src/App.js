@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Link, Switch } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import HomePage from "../src/screens/HomePage";
 import Register from "../src/screens/Register";
-import CartScreen from "../src/screens/CartScreen";
+import CartScreen from "../src/screens/cartScreen";
 import Login from "../src/screens/Login";
 
 function App() {
