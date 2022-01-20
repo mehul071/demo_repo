@@ -51,7 +51,7 @@ function CartScreen() {
                   </div>
                 </div>
                 <div className="cart_img flex">
-                  <img src={item.image} />
+                  <img src={item.image} alt="sorry refresh page" />
                   <span className="block trash">
                     <BsTrashFill
                       onClick={() => {
