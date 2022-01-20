@@ -14,9 +14,9 @@ app.use("/api/pizzas/", pizzaRoute);
 app.use("/api/users/", UserRoute);
 app.use("/api/orders/", placeRoute);
 
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client_app", "build")));
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  res.sendFile(path.join(__dirname, "client_app", "build", "index.html"));
 });
 
 const port = process.env.PORT || 5000;
